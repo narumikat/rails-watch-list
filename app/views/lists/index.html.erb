@@ -15,7 +15,7 @@
   <div class="row">
     <div class="col-3">
       <small>ABOUT US</small>
-      <h2>All the movies</h2>
+      <h2>All the <span>movies</span></h2>
       <p>Explore the best features our movie site has to offer. From the latest blockbusters to classic films, we've got something for everyone.</p>
     </div>
     <div class="col about-details">
@@ -45,7 +45,74 @@
   </div>
 </div>
 <div class="container">
-  <% @list.bookmarks.each do |bookmark| %>
-    <%= movie.title %>
-  <% end %>
+  <div class="list-container">
+    <% action_list = List.find_by(name: 'Action') %>
+    <div class="d-flex justify-content-between">
+      <h2><%= action_list.name %></h2>
+      <div>
+        <%= link_to 'See All', list_path(action_list), class: "btn-movies-list"%>
+      </div>
+    </div>
+    <div class="row">
+      <% if action_list.present? %>
+        <% action_list.bookmarks.first(4).each do |bookmark| %>
+          <div class="col-3">
+            <div class="movie-card">
+              <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>" class="img-fluid">
+              <h4><%= bookmark.movie.title %></h4>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                  <i class="fa-solid fa-star"></i>
+                  <h3 class="ms-2"><%= bookmark.movie.rating %></h3>
+                </div>
+                <p><%= bookmark.movie.release_date %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>No Action movies found.</p>
+    <% end %>
+  </div>
+  <div class="list-container">
+    <% comedy_list = List.find_by(name: 'Comedy') %>
+    <div class="d-flex justify-content-between">
+      <h2><%= comedy_list.name %></h2>
+      <div>
+        <%= link_to 'See All', list_path(comedy_list), class: "btn-movies-list"%>
+      </div>
+    </div>
+    <div class="row">
+      <% if comedy_list.present? %>
+        <% comedy_list.bookmarks.first(4).each do |bookmark| %>
+          <div class="col-3">
+            <div class="movie-card">
+              <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>" class="img-fluid">
+              <h4><%= bookmark.movie.title %></h4>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                  <i class="fa-solid fa-star"></i>
+                  <h3 class="ms-2"><%= bookmark.movie.rating %></h3>
+                </div>
+                <p><%= bookmark.movie.release_date %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>No Comedy movies found.</p>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="review-container">
+    <div class="d-flex justify-content-center mb-2">
+      <small>REVIEWS</small>
+    </div>
+    <h2 class="text-center">Latest <span>Reviews</span></h2>
+    <div class="review">
+    </div>
+  </div>
 </div>

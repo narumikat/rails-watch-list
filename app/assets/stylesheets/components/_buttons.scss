@@ -1,0 +1,17 @@
+.btn-movies {
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  color: $white;
+  background: $indigo;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.btn-movies-list {
+  text-decoration: none;
+  color: $white;
+  background: $indigo;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}

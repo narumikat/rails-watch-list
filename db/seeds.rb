@@ -16,7 +16,7 @@ def fetch_movies(page)
   JSON.parse(response)['results']
 end
 
-# Coletar filmes das primeiras 10 páginas
+# Coletar filmes das primeiras 5 páginas
 movies = []
 (1..5).each do |page|
   movies.concat(fetch_movies(page))
@@ -27,7 +27,9 @@ movies.each do |data|
     title: data["title"],
     overview: data["overview"],
     poster_url: "https://image.tmdb.org/t/p/w500#{data["poster_path"]}",
-    rating: data["vote_average"]
+    rating: data["vote_average"],
+    release_date: data["release_date"],
+    backdrop_url: data["backdrop_url"]
   )
 end
 
@@ -35,7 +37,7 @@ puts "Seeded #{movies.size} movies from TMDB API"
 
 puts 'Creating lists...'
 
-list_names = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Documentary", "Fantasy"]
+list_names = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Documentary", "Fantasy", "Classic", "Super Hero"]
 
 list_names.each do |list_name|
   List.find_or_create_by!(name: list_name)
