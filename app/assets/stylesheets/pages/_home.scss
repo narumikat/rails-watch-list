@@ -1,1 +1,86 @@
-// Specific CSS for your home-page
+body {
+
+  background-color: $black;
+
+  p {
+    color: $white;
+  }
+  
+  .banner {
+    position: relative;
+    background-image: url('/assets/banner-top.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 250px;
+    padding-bottom: 300px;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(19,19,19,1));
+      z-index: 1;
+    }
+  
+    h1 {
+      position: relative;
+      z-index: 2;
+      color: $white;
+      font-size: 6rem;
+      margin-bottom: 50px;
+    }
+  
+    span {
+      position: relative;
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    .btn-movies {
+      position: relative;
+      z-index: 2;
+      text-decoration: none;
+      color: $white;
+      background: $indigo;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+  }
+  
+  .container-about {
+
+    h2 {
+      color: $white;
+      margin-top: 1rem;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    small {
+      background: $dark-indigo;
+      color: $ligth-indigo;
+      padding: 5px 15px 5px 15px;
+      border-radius: 4px;
+    }
+
+    .about-details {
+
+      border: 2px solid rgba(163, 112, 247, 0.5);
+      border-radius: 8px;
+      padding: 2rem;
+      
+      h3 {
+        color: $white;
+      }
+    }
+  }
+}

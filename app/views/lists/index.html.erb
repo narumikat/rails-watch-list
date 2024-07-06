@@ -1,0 +1,51 @@
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+      </div>
+      <div class="col">
+        <h1>WATCH <span>LIST</span></h1>
+        <%= link_to 'All Movies List', lists_path,
+        class: "btn-movies" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container container-about">
+  <div class="row">
+    <div class="col-3">
+      <small>ABOUT US</small>
+      <h2>All the movies</h2>
+      <p>Explore the best features our movie site has to offer. From the latest blockbusters to classic films, we've got something for everyone.</p>
+    </div>
+    <div class="col about-details">
+      <div class="row">
+        <div class="col-6 mt-2">
+          <div class="mb-4">
+            <h3>Extensive Movie Library</h3>
+            <p>Discover a vast collection of movies across all genres and time periods, carefully curated for every type of movie lover.</p>
+          </div>
+          <div class="mb-4">
+            <h3>Community Reviews</h3>
+            <p>Read reviews and ratings from fellow movie enthusiasts to help you decide what to watch next.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-4">
+            <h3>Create Custom Watch Lists</h3>
+            <p>Organize your movie experience by creating custom watch lists to make your viewing sessions even more enjoyable.</p>
+          </div>
+          <div class="mb-4">
+            <h3>Watchlist and Favorites</h3>
+            <p>Create and manage your personal watchlist, so you can keep track of the movies you want to see.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <% @list.bookmarks.each do |bookmark| %>
+    <%= movie.title %>
+  <% end %>
+</div>

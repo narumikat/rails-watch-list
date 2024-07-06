@@ -1,15 +1,13 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
 require 'open-uri'
 require 'json'
+
+puts 'Cleaning database...'
+
+Bookmark.destroy_all
+List.destroy_all
+Movie.destroy_all
+
+puts 'Creating movies...'
 
 def fetch_movies(page)
   api_key = "bf024e341468ce68a262cb311d8701b9"
@@ -20,7 +18,7 @@ end
 
 # Coletar filmes das primeiras 10 páginas
 movies = []
-(1..10).each do |page|
+(1..5).each do |page|
   movies.concat(fetch_movies(page))
 end
 
@@ -34,3 +32,35 @@ movies.each do |data|
 end
 
 puts "Seeded #{movies.size} movies from TMDB API"
+
+puts 'Creating lists...'
+
+list_names = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Documentary", "Fantasy"]
+
+list_names.each do |list_name|
+  List.find_or_create_by!(name: list_name)
+end
+
+puts "Seeded #{list_names.size} lists"
+
+puts 'Creating bookmarks...'
+
+lists = List.all
+movies = Movie.all.sample(20)
+
+lists.each do |list|
+  5.times do
+    movie = movies.sample
+    begin
+      Bookmark.create!(
+        list: list,
+        movie: movie,
+        comment: "This is a great #{list.name.downcase} movie!"
+      )
+    rescue ActiveRecord::RecordInvalid => e
+      puts "Skipping duplicate bookmark for movie '#{movie.title}' in list '#{list.name}'"
+    end
+  end
+end
+
+puts "Seeded bookmarks"
