@@ -1,11 +1,23 @@
 class ListsController < ApplicationController
-  def index
-    @lists = List.includes(bookmarks: :movie)
+  before_action :set_latest_lists, only: [:home, :index, :show, :new, :create]
+
+  def home
+    @lists = List.includes(bookmarks: { movie: :reviews })
+    @latest_reviews = Review.order(created_at: :desc).limit(6)
   end
 
+  def index
+    @lists = List.all
+  end
+  
   def show
     @list = List.find(params[:id])
     @movies = @list.movies
+    @bookmarks = @list.bookmarks
+    @bookmark = Bookmark.new
+    @available_movies = Movie.where.not(id: @list.movies.pluck(:id))
+    @review = Review.new
+    @reviews = @list.reviews
   end
 
   def new
@@ -23,7 +35,11 @@ class ListsController < ApplicationController
 
   private
 
+  def set_latest_lists
+    @latest_lists = List.order(created_at: :desc).limit(6)
+  end
+
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :image_url)
   end
 end

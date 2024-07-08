@@ -1,5 +1,7 @@
 .movie-card {
-  width: 100%;margin: 1rem;
+  width: 100%;
+  margin: 1rem;
+  text-decoration: none;
 
   img {
     height: 500px;
@@ -23,7 +25,7 @@
   }
 
   p {
-    color: $ligth-indigo;
+    color: $light-indigo;
     margin-right: 1rem;
   }
 }

@@ -4,5 +4,6 @@ class Movie < ApplicationRecord
 
   validates :title, :overview, uniqueness: true
   validates :title, :overview, presence: true
-
+  validates :backdrop_path, presence: true
+  validates :rating, presence: true, numericality: true
 end

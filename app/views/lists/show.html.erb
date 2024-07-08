@@ -1,0 +1,74 @@
+<div class="container show-container">
+  <div class="d-flex justify-content-center mb-2">
+    <small>LIST</small>
+  </div>
+  <h1 class="text-center">List Name: <span><%= @list.name %></span></h1>
+  <div class="row">
+    <% @list.bookmarks.each do |bookmark| %>
+      <%= render 'shared/movie_card', movie: bookmark.movie %>
+    <% end %>
+  </div>
+  <div class="mt-5 show-container">
+    <div class="row">
+      <div class="col-8 me-4">
+        <h2>Bookmarks</h2>
+        <% @bookmarks.each do |b| %>
+          <div class="d-flex border-bottom-b">
+            <i class="fa-solid fa-quote-left mx-2 quote"></i>
+            <p><%= b.comment %></p>
+            <i class="fa-solid fa-quote-right mx-2 quote"></i>
+          </div>
+        <% end %>
+      </div>
+      <div class="col d-flex align-items-center ms-2 form-list">
+        <div>
+          <h3>Add a new bookmark</h3>
+          <%= simple_form_for [@list, @list.bookmarks.build] do |f| %>
+            <%= f.input :movie_id,
+                          collection: @available_movies.collect { |movie| [movie.title, movie.id] },
+                          prompt: "Select a movie",
+                          label: "Movie",
+                          input_html: { class: "input-list" } %>
+            <%= f.input :comment,
+                          input_html: { class: "input-list" } %>
+            <%= f.submit "Add Bookmark", class: "btn btn-sm" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-show">
+    <h2>List reviews</h2>
+    <div class="row">
+      <div class="col-8">
+        <% @reviews.each do |review| %>
+          <div class="row">
+            <div class="d-flex">
+              <% review.rating.times do %>
+                <i class="fa-solid fa-star star"></i>
+              <% end %>
+              <p class="date-review"><%= review.created_at.strftime("%d %B %Y") %></p>
+            </div>
+            <p><%= review.content %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col align-items-center ms-4">
+        <div class="form-list">
+          <h3>Add a new review</h3>
+          <%= simple_form_for [@list, @review] do |f|%>
+            <%= f.input :content,
+            input_html: { class: "input-list" } %>
+            <%= f.input :rating,
+            placeholder: "Insert rating between ( 1 .. 5 )",
+            input_html: { class: "input-list" } %>
+            <%= f.submit "Post a Review", class: "btn btn-sm" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end mt-4 pt-4">
+    <%= link_to 'See All The Lists', lists_path, class: "btn-secondary-sm"%>
+  </div>
+</div>

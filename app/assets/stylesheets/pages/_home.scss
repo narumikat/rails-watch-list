@@ -1,40 +1,6 @@
-.banner {
-  position: relative;
-  background-image: url('/assets/banner-top.jpg');
-  background-size: cover;
-  background-position: center;
-  padding-top: 250px;
-  padding-bottom: 300px;
-  height: 100%;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(19,19,19,1));
-    z-index: 1;
-  }
-
-  h1 {
-    position: relative;
-    z-index: 2;
-    font-size: 6rem;
-    margin-bottom: 50px;
-  }
-
-  span {
-    position: relative;
-    font-weight: 800;
-    z-index: 2;
-  }
-}
-
 .container-about {
-
-  margin-top: 3rem;
+  margin-top: 50px;
+  padding-bottom: 100px;
 
   h2 {
     margin-top: 1rem;
@@ -57,8 +23,17 @@
 }
 
 .list-container {
-  margin-top: 200px;
+  margin-top: 100px;
   margin-bottom: 50px;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 100px;
+  }
+
+  span {
+    font-weight: 700;
+  }
 
   h2 {
     position: relative;
@@ -73,7 +48,7 @@
       left: -10px;
       width: 70%;
       height: 3px;
-      background-color: $ligth-indigo;
+      background-color: $light-indigo;
     }
   }
 }
@@ -84,6 +59,22 @@
 
   h2 {
     font-size: 3rem;
+    margin-bottom: 100px;
+  }
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.all-lists-container {
+
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 100px;
   }
 
   span {

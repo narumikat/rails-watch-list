@@ -1,0 +1,48 @@
+.show-container {
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 100px;
+  }
+
+  span {
+    font-weight: 700;
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 3rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: -10px;
+      width: 70%;
+      height: 3px;
+      background-color: $light-indigo;
+    }
+  }
+
+  .quote {
+    color: #6c757d;
+    font-size: 1rem;
+  }
+
+  .star {
+    color: $yellow;
+    margin-right: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .date-review {
+    color: #6c757d;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+}

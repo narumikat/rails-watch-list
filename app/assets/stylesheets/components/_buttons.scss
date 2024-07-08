@@ -1,4 +1,4 @@
-.btn-movies {
+.btn-xl {
   position: relative;
   z-index: 2;
   text-decoration: none;
@@ -6,12 +6,38 @@
   background: $indigo;
   padding: 1rem 2rem;
   border-radius: 8px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: $dark-indigo;
+    color: $white;
+  }
 }
 
-.btn-movies-list {
+.btn-sm {
   text-decoration: none;
   color: $white;
   background: $indigo;
   padding: 0.5rem 1rem;
   border-radius: 8px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: $dark-indigo;
+    color: $white;
+  }
+}
+
+.btn-secondary-sm {
+  color: $white;
+  text-decoration: none;
+  background: $gray;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+
+  &:hover {
+    background: $gray-hover;
+
+  }
 }
