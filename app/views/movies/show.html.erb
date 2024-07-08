@@ -1,5 +1,17 @@
 <div class="movie-banner" style="background-image: url('<%= @movie.backdrop_path %>')">
   <div class="container">
-    <%= @movie.title %>
+    <div class="row border-bottom-b">
+      <div class="col-10">
+        <small>MOVIE</small>
+        <h1><%= @movie.title %></h1>
+        <p class="release_date">Release Date: <%= @movie.release_date %></p>
+      </div>
+      <div class="col">
+        <div class="row d-flex flex-column align-items-center">
+          <i class="fa-solid fa-star"></i>
+          <h3><%= @movie.rating %></h3>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
