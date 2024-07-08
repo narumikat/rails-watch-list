@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="all-lists-container">
+    <div class="d-flex justify-content-center mb-2">
+      <small>ADD LIST</small>
+    </div>
+    <h2 class="text-center">Add <span>New List</span></h2>
+  </div>
+  <div class="form-list">
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name, input_html: { class: "input-list" } %>
+      <%= f.input :image_url, input_html: { class: "input-list" } %>
+      <%= f.submit class: "btn-sm"%>
+    <% end %>
+  </div>
+</div>

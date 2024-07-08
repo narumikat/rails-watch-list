@@ -1,0 +1,40 @@
+<div class="footer-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-3 d-flex justify-content-center">
+        <div class="p-3">
+          <h2>WATCH <span>LIST</span></h2>
+          <%= link_to 'See All The Lists', lists_path, class: "btn-sm" %>
+        </div>
+      </div>
+      <div class="col-3 d-flex justify-content-center">
+        <div class="p-3">
+          <h3>About us</h3>
+          <p>Welcome to Rails Watch List! We help movie enthusiasts organize their favorite films, create personalized watch lists, and share reviews. Whether you love action, comedy, drama, or horror, our user-friendly platform has something for everyone.</p>
+        </div>
+      </div>
+      <div class="col-3 d-flex justify-content-center">
+        <div class="p-3">
+          <h3>Lists</h3>
+          <% @latest_lists.each do |list| %>
+            <div class="row">
+              <%= link_to list.name, list_path(list), class: "footer-link" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-3 d-flex justify-content-center">
+        <div class="p-3">
+          <h3>Links</h3>
+          <div class="row">
+            <%= link_to 'Home', root_path, class: "footer-link" %>
+            <%= link_to 'See All Lists', lists_path, class: "footer-link" %>
+            <%= link_to 'Add a New List', new_list_path, class: "footer-link" %>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

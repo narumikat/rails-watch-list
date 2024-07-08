@@ -1,0 +1,31 @@
+.movie-card {
+  width: 100%;
+  margin: 1rem;
+  text-decoration: none;
+
+  img {
+    height: 500px;
+    width: auto;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  h3 {
+    color: $yellow;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  i {
+    color: $yellow;
+    font-size: 1.3rem;
+  }
+
+  p {
+    color: $light-indigo;
+    margin-right: 1rem;
+  }
+}

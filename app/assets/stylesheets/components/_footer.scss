@@ -1,0 +1,60 @@
+.footer-banner {
+  position: relative;
+  background-image: url('/assets/theatre-seats.png');
+  background-size: cover;
+  background-position: top;
+  padding-top: 150px;
+  padding-bottom: 50px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(19,19,19,0.3), rgba(19,19,19,1));
+    z-index: 1;
+  }
+
+  h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  span {
+    position: relative;
+    font-weight: 800;
+    z-index: 2;
+  }
+
+  .btn-sm, h3, p, .footer-link {
+    position: relative;
+    z-index: 2;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    color: $white;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $indigo;
+    }
+  }
+}
