@@ -34,7 +34,7 @@ movies.each do |data|
     poster_url: "https://image.tmdb.org/t/p/w500#{data["poster_path"]}",
     rating: data["vote_average"],
     release_date: data["release_date"],
-    backdrop_url: "https://image.tmdb.org/t/p/w500#{data["backdrop_url"]}"
+    backdrop_path: "https://image.tmdb.org/t/p/w500#{data["backdrop_path"]}"
   )
 end
 

@@ -1,5 +1,41 @@
 <div class="movie-banner" style="background-image: url('<%= @movie.backdrop_path %>')">
   <div class="container">
-    <%= @movie.title %>
+    <div class="row border-bottom-100">
+      <div class="col-10">
+        <small>MOVIE</small>
+        <h1><%= @movie.title %></h1>
+        <p class="release_date">Release Date: <%= @movie.release_date %></p>
+      </div>
+      <div class="col d-flex align-items-center justify-content-end">
+        <div class="row d-flex justify-content-end">
+          <i class="fa-solid fa-star text-center"></i>
+          <h2 class="text-center"><%= @movie.rating %></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8 overview-movie d-flex">
+        <img src="<%= @movie.poster_url %>" alt="<%= @movie.title %>" class="img-fluid">
+        <div class="mx-4">
+          <h4>Overview:</h4>
+          <p><%= @movie.overview %></p>
+          <h4>Lists:</h4>
+          <div class="container mt-4">
+            <div class="row justify-content-around">
+              <% @lists.each do |list| %>
+                <div class="col-md mb-3">
+                  <%= link_to list_path(list), class: "btn btn-transparent btn-block" do %>
+                    <%= list.name %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col ms-2 d-flex align-items-start">
+        <%= render 'shared/bookmark_list_form'%>
+      </div>
+    </div>
   </div>
 </div>

@@ -18,7 +18,7 @@ body {
 
   small {
     background: $dark-indigo;
-    color: $light-indigo;
+    color: $white;
     padding: 5px 15px 5px 15px;
     border-radius: 4px;
   }
@@ -34,6 +34,22 @@ body {
       left: 1rem;
       right: 1rem;
       width: 80%;
+      border-bottom: 1px solid rgba(163, 112, 247, 0.5);
+      height: 15px;
+    }
+  }
+
+  .border-bottom-100 {
+    position: relative;
+    margin-bottom: 1rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+      right: 1rem;
+      width: 100%;
       border-bottom: 1px solid rgba(163, 112, 247, 0.5);
       height: 15px;
     }

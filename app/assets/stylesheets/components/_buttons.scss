@@ -41,3 +41,17 @@
 
   }
 }
+
+.btn-transparent {
+  text-decoration: none;
+  border: 1px solid $gray;
+  padding: 0.5rem 1rem;
+  color: $gray;
+  border-radius: 24px;
+  transition: color 0.3s, border-color 0.3s;
+
+  &:hover {
+    color: $indigo;
+    border-color: $indigo;
+  }
+}

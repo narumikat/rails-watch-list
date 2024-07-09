@@ -18,16 +18,17 @@
     z-index: 1;
   }
 
-  h1 {
-    position: relative;
+  * {
     z-index: 2;
+    position: relative;
+  }
+
+  h1 {
     font-size: 6rem;
     margin-bottom: 50px;
   }
 
   span {
-    position: relative;
     font-weight: 800;
-    z-index: 2;
   }
 }

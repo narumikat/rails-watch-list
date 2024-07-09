@@ -20,20 +20,8 @@
           </div>
         <% end %>
       </div>
-      <div class="col d-flex align-items-center ms-2 form-list">
-        <div>
-          <h3>Add a new bookmark</h3>
-          <%= simple_form_for [@list, @list.bookmarks.build] do |f| %>
-            <%= f.input :movie_id,
-                          collection: @available_movies.collect { |movie| [movie.title, movie.id] },
-                          prompt: "Select a movie",
-                          label: "Movie",
-                          input_html: { class: "input-list" } %>
-            <%= f.input :comment,
-                          input_html: { class: "input-list" } %>
-            <%= f.submit "Add Bookmark", class: "btn btn-sm" %>
-          <% end %>
-        </div>
+      <div class="col d-flex align-items-center ms-2">
+        <%= render 'shared/bookmark_movie_form'%>
       </div>
     </div>
   </div>

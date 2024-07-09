@@ -1,0 +1,14 @@
+<div class="form-list col-12">
+  <h3>Add to a list:</h3>
+  <%= simple_form_for @bookmark, url: movie_bookmarks_path(@movie) do |f| %>
+    <%= f.hidden_field :movie_id, value: @movie.id %>
+    <%= f.input :list_id,
+                  collection: @available_lists.map { |list| [list.name, list.id] },
+                  prompt: "Select a list",
+                  label: "List",
+                  input_html: { class: "input-list" } %>
+    <%= f.input :comment,
+                input_html: { class: "input-list" } %>
+    <%= f.submit "Add to List", class: "btn btn-sm" %>
+  <% end %>
+</div>

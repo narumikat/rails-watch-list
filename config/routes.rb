@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :lists, only: [:index, :new, :create, :show] do 
-    resources :bookmarks, only: [:new, :create]
+    resources :bookmarks, only: [:new, :create, :destroy]
     resources :reviews, only: [:new, :create, :destroy]
   end
-  resources :bookmarks, only: [:destroy]
-  resources :movies, only: [:index, :show]
+  
+  resources :movies, only: [:index, :show] do
+    resources :bookmarks, only: [:create]
+  end
 
   root to: 'lists#home'
 end

@@ -1,0 +1,13 @@
+<div class="form-list">
+  <h3>Add a new movie:</h3>
+  <%= simple_form_for [@list, @list.bookmarks.build] do |f| %>
+    <%= f.input :movie_id,
+                collection: @available_movies.collect { |movie| [movie.title, movie.id] },
+                prompt: "Select a movie",
+                label: "Movie",
+                input_html: { class: "input-list" } %>
+    <%= f.input :comment,
+                input_html: { class: "input-list" } %>
+    <%= f.submit "Add Bookmark", class: "btn btn-sm" %>
+  <% end %>
+</div>
