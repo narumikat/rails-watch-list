@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_latest_lists, only: [:home, :index, :show, :new, :create]
+  # before_action :set_latest_lists, only: [:home, :index, :show, :new, :create]
 
   def home
     @lists = List.includes(bookmarks: { movie: :reviews })
@@ -34,10 +34,6 @@ class ListsController < ApplicationController
   end
 
   private
-
-  def set_latest_lists
-    @latest_lists = List.order(created_at: :desc).limit(6)
-  end
 
   def list_params
     params.require(:list).permit(:name, :image_url)
