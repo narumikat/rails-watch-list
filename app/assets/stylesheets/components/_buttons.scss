@@ -55,3 +55,17 @@
     border-color: $indigo;
   }
 }
+
+.btn-search {
+  text-decoration: none;
+  border: 1px solid $white;
+  padding: 0.5rem 1rem;
+  color: $white;
+  border-radius: 8px;
+  transition: color 0.3s, border-color 0.3s;
+
+  &:hover {
+    color: $indigo;
+    border-color: $indigo;
+  }
+}
