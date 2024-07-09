@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   def home
     @lists = List.includes(bookmarks: { movie: :reviews })
     @latest_reviews = Review.order(created_at: :desc).limit(6)
+    @latest_two_lists = List.order(created_at: :desc).limit(2)
   end
 
   def index

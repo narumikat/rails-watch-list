@@ -33,6 +33,7 @@
   </div>
 </div>
 <div class="container">
+  <!-- 
   <div class="list-container">
     <% action_list = List.find_by(name: 'Action') %>
     <div class="d-flex justify-content-between">
@@ -68,7 +69,26 @@
     <% else %>
       <p>No Comedy movies found.</p>
     <% end %>
-  </div>
+  </div> -->
+  <% @latest_two_lists.each do |list| %>
+    <div class="list-container">
+      <div class="d-flex justify-content-between">
+        <h2><%= list.name %></h2>
+        <div>
+          <%= link_to 'See All', list_path(list), class: "btn-sm" %>
+        </div>
+      </div>
+      <div class="row">
+        <% if list.bookmarks.present? %>
+          <% list.bookmarks.first(4).each do |bookmark| %>
+            <%= render 'shared/movie_card', movie: bookmark.movie %>
+          <% end %>
+        <% else %>
+          <p>No movies found.</p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
 <div class="container">
   <div class="review-container">
