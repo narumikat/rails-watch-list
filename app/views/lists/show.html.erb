@@ -5,7 +5,7 @@
   <h1 class="text-center">List Name: <span><%= @list.name %></span></h1>
   <div class="row">
     <% @list.bookmarks.each do |bookmark| %>
-      <%= render 'shared/movie_card', movie: bookmark.movie %>
+      <%= render 'shared/movie_show_card', bookmark: bookmark %>
     <% end %>
   </div>
   <div class="mt-5 show-container">
