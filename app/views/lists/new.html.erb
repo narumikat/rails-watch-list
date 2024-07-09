@@ -8,7 +8,10 @@
   <div class="form-list">
     <%= simple_form_for @list do |f| %>
       <%= f.input :name, input_html: { class: "input-list" } %>
+      <!-- 
       <%= f.input :image_url, input_html: { class: "input-list" } %>
+      -->
+      <%= f.input :photo, as: :file %>
       <%= f.submit class: "btn-sm"%>
     <% end %>
   </div>

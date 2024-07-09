@@ -10,6 +10,9 @@ gem "sassc-rails"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 
+# load environment variables from the .env file
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Gemfile
 gem 'faker'
 gem 'open-uri'
