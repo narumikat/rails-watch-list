@@ -15,7 +15,10 @@
         <% @bookmarks.each do |b| %>
           <div class="d-flex border-bottom-b">
             <i class="fa-solid fa-quote-left mx-2 quote"></i>
-            <p><%= b.comment %></p>
+            <div>
+              <p><%= b.comment %></p>
+              <p class="p-small d-flex"><%= b.movie.title %></p>
+            </div>
             <i class="fa-solid fa-quote-right mx-2 quote"></i>
           </div>
         <% end %>
@@ -56,7 +59,7 @@
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-end mt-4 pt-4">
-    <%= link_to 'See All The Lists', lists_path, class: "btn-secondary-sm"%>
+  <div class="d-flex justify-content-start mt-4 pt-4">
+    <%= link_to 'Back', (request.referrer || lists_path), class: "btn-secondary-sm ms-2" %>
   </div>
 </div>

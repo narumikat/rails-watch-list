@@ -37,5 +37,8 @@
         <%= render 'shared/bookmark_list_form'%>
       </div>
     </div>
+    <div class="d-flex justify-content-start mt-4 pt-4">
+      <%= link_to 'Back', (request.referrer || root_path), class: "btn-secondary-sm ms-2" %>
+    </div>
   </div>
 </div>

@@ -6,6 +6,5 @@ class MoviesController < ApplicationController
     @lists = @movie.lists
     @available_lists = List.where.not(id: @movie.lists.pluck(:id))
     @bookmark = Bookmark.new
-    
   end
 end
