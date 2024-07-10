@@ -8,10 +8,10 @@
   <div class="form-list">
     <%= simple_form_for @list do |f| %>
       <%= f.input :name, input_html: { class: "input-list" } %>
-      <!-- 
-      <%= f.input :image_url, input_html: { class: "input-list" } %>
-      -->
+      <p>Select a image from your computer</p>
       <%= f.input :photo, as: :file %>
+      <p>Or paste a image url</p>
+      <%= f.input :image_url, input_html: { class: "input-list" } %>
       <%= f.submit class: "btn-sm"%>
     <% end %>
   </div>

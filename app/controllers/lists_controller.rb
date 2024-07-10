@@ -18,7 +18,7 @@ class ListsController < ApplicationController
     @bookmark = Bookmark.new
     @available_movies = Movie.where.not(id: @list.movies.pluck(:id))
     @review = Review.new
-    @reviews = @list.reviews
+    @reviews = @list.reviews.order(created_at: :desc)
   end
 
   def new

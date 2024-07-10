@@ -74,7 +74,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_233650) do
   create_table "reviews", force: :cascade do |t|
     t.bigint "list_id", null: false
     t.text "content"
-    t.integer "rating", null: false
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["list_id"], name: "index_reviews_on_list_id"

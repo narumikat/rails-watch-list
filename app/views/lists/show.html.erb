@@ -35,8 +35,12 @@
         <% @reviews.each do |review| %>
           <div class="row">
             <div class="d-flex">
-              <% review.rating.times do %>
-                <i class="fa-solid fa-star star"></i>
+              <% if review.rating.present? %>
+                <% review.rating.times do %>
+                  <i class="fa-solid fa-star star"></i>
+                <% end %>
+              <% else %>
+                <i class="fa-regular fa-star star-line"></i>
               <% end %>
               <p class="date-review"><%= review.created_at.strftime("%d %B %Y") %></p>
             </div>
@@ -47,12 +51,9 @@
       <div class="col align-items-center ms-4">
         <div class="form-list">
           <h3>Add a new review</h3>
-          <%= simple_form_for [@list, @review] do |f|%>
-            <%= f.input :content,
-            input_html: { class: "input-list" } %>
-            <%= f.input :rating,
-            placeholder: "Insert rating between ( 1 .. 5 )",
-            input_html: { class: "input-list" } %>
+          <%= simple_form_for [@list, @review] do |f| %>
+            <%= f.input :content, input_html: { class: "input-list" } %>
+            <%= f.input :rating, placeholder: "Insert rating between ( 1 .. 5 )", input_html: { class: "input-list" } %>
             <%= f.submit "Post a Review", class: "btn btn-sm" %>
           <% end %>
         </div>

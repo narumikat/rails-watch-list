@@ -1,7 +1,13 @@
 <div class="col-md-4 mb-4">
   <%= link_to list do %>
     <div class="list-card">
-      <img src="<%= list.image_url %>" alt="<%= list.name %> image" class="img-fluid">
+      <% if list.image_url.present? %>
+        <img src="<%= list.image_url %>" alt="<%= list.name %> image" class="img-fluid">
+      <% elsif list.photo.attached? %>
+        <%= image_tag list.photo, alt: "#{list.name} image", class: "img-fluid" %>
+      <% else %>
+        <p>No image available</p>
+      <% end %>
       <h4><%= list.name %></h4>
     </div>
   <% end %>

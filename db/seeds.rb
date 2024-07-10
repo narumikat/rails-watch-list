@@ -89,7 +89,7 @@ puts 'Creating reviews...'
 
 lists = List.all
 lists.each do |list|
-  10.times do
+  5.times do
     Review.create!(
       list: list,
       content: Faker::Quotes::Shakespeare.hamlet_quote,
