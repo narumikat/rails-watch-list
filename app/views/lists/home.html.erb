@@ -33,43 +33,6 @@
   </div>
 </div>
 <div class="container">
-  <!-- 
-  <div class="list-container">
-    <% action_list = List.find_by(name: 'Action') %>
-    <div class="d-flex justify-content-between">
-      <h2><%= action_list.name %></h2>
-      <div>
-        <%= link_to 'See All', list_path(action_list), class: "btn-sm"%>
-      </div>
-    </div>
-    <div class="row">
-      <% if action_list.present? %>
-        <% action_list.bookmarks.first(4).each do |bookmark| %>
-          <%= render 'shared/movie_card', movie: bookmark.movie %>
-        <% end %>
-      </div>
-    <% else %>
-      <p>No Action movies found.</p>
-    <% end %>
-  </div>
-  <div class="list-container">
-    <% comedy_list = List.find_by(name: 'Comedy') %>
-    <div class="d-flex justify-content-between">
-      <h2><%= comedy_list.name %></h2>
-      <div>
-        <%= link_to 'See All', list_path(comedy_list), class: "btn-sm"%>
-      </div>
-    </div>
-    <div class="row">
-      <% if comedy_list.present? %>
-        <% comedy_list.bookmarks.first(4).each do |bookmark| %>
-          <%= render 'shared/movie_card', movie: bookmark.movie %>
-        <% end %>
-      </div>
-    <% else %>
-      <p>No Comedy movies found.</p>
-    <% end %>
-  </div> -->
   <% @latest_two_lists.each do |list| %>
     <div class="list-container">
       <div class="d-flex justify-content-between">
