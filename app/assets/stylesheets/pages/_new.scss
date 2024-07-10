@@ -1,10 +1,9 @@
-.banner {
+.new-list {
   position: relative;
   background-image: url('/assets/banner-top.jpg');
   background-size: cover;
-  background-position: center;
-  padding-top: 10%;
-  height: 55vh;
+  background-position: bottom;
+  height: 80vh;
 
   &::before {
     content: '';
@@ -13,7 +12,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(19,19,19,1));
+    background: linear-gradient(to bottom, rgba(19,19,19,0.8), rgba(19,19,19,1));
     z-index: 1;
   }
 
@@ -22,12 +21,17 @@
     position: relative;
   }
 
-  h1 {
-    font-size: 6rem;
+  .new-list-container {
+    padding-top: 10%;
     margin-bottom: 50px;
-  }
-
-  span {
-    font-weight: 800;
+  
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 100px;
+    }
+  
+    span {
+      font-weight: 700;
+    }
   }
 }

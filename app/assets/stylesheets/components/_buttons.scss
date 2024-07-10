@@ -5,11 +5,27 @@
   color: $white;
   background: $indigo;
   padding: 1rem 2rem;
-  border-radius: 8px;
+  border-radius: 32px;
   transition: background 0.3s;
 
   &:hover {
     background: $dark-indigo;
+    color: $white;
+  }
+}
+
+.btn-xl-gray {
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  color: $white;
+  background: $gray;
+  padding: 1rem 2rem;
+  border-radius: 32px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: $gray-hover;
     color: $white;
   }
 }

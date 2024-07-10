@@ -1,8 +1,5 @@
+  <%= render 'shared/banner_lists'%>
 <div class="container show-container">
-  <div class="d-flex justify-content-center mb-2">
-    <small>LIST</small>
-  </div>
-  <h1 class="text-center">List Name: <span><%= @list.name %></span></h1>
   <div class="row">
     <% @list.bookmarks.each do |bookmark| %>
       <%= render 'shared/movie_show_card', bookmark: bookmark %>
@@ -21,7 +18,7 @@
                 <p class="p-small d-flex"><%= b.movie.title %></p>
               </div>
             </div>
-            <div>
+            <div class="ms-2">
               <%= button_to list_bookmark_path(@list, b), method: :delete, data: { confirm: 'Are you sure?'}, class: "" do %>
                 <i class="fa-solid fa-trash trash-can"></i>
               <% end %>
@@ -52,7 +49,7 @@
             </div>
             <div class="d-flex justify-content-between">
               <p><%= review.content %></p>
-              <div class="d-flex align-items-start">
+              <div class="d-flex align-items-start ms-2">
                 <%= button_to list_review_path(@list, review), method: :delete, data: { confirm: 'Are you sure?'}, class: "" do %>
                   <i class="fa-solid fa-trash trash-can"></i>
                 <% end %>

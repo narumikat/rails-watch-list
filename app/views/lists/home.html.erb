@@ -35,7 +35,7 @@
 <div class="container">
   <% @latest_two_lists.each do |list| %>
     <div class="list-container">
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between mb-4">
         <h2><%= list.name %></h2>
         <div>
           <%= link_to 'See All', list_path(list), class: "btn-sm" %>

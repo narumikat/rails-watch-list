@@ -1,0 +1,6 @@
+<div class="bg-show" style="background-image: url('<%= @list.image_url.present? ? @list.image_url : url_for(@list.photo) %>');">
+  <div class="d-flex justify-content-center mb-2">
+    <small>LIST</small>
+  </div>
+  <h1 class="text-center">List Name: <span><%= @list.name %></span></h1>
+</div>
