@@ -1,21 +1,23 @@
-<div class="container">
-  <div class="all-lists-container">
-    <div class="d-flex justify-content-center mb-2">
-      <small>ADD LIST</small>
+<div class="new-list">
+  <div class="container">
+    <div class="new-list-container">
+      <div class="d-flex justify-content-center mb-2">
+        <small>ADD LIST</small>
+      </div>
+      <h2 class="text-center">Add <span>New List</span></h2>
     </div>
-    <h2 class="text-center">Add <span>New List</span></h2>
-  </div>
-  <div class="form-list">
-    <%= simple_form_for @list do |f| %>
-      <%= f.input :name, input_html: { class: "input-list" } %>
-      <p>Select a image from your computer</p>
-      <%= f.input :photo, as: :file %>
-      <p>Or paste a image url</p>
-      <%= f.input :image_url, input_html: { class: "input-list" } %>
-      <%= f.submit class: "btn-sm"%>
-    <% end %>
-  </div>
-  <div class="d-flex justify-content-start mt-4 pt-4">
-    <%= link_to 'Back', (request.referrer || root_path), class: "btn-secondary-sm ms-2" %>
+    <div class="form-list">
+      <%= simple_form_for @list do |f| %>
+        <%= f.input :name, input_html: { class: "input-list" } %>
+        <p>Select a image from your computer</p>
+        <%= f.input :photo, as: :file %>
+        <p>Or paste a image url</p>
+        <%= f.input :image_url, input_html: { class: "input-list" } %>
+        <%= f.submit class: "btn-sm"%>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-start mt-4 pt-4">
+      <%= link_to 'Back', (request.referrer || root_path), class: "btn-secondary-sm ms-2" %>
+    </div>
   </div>
 </div>
