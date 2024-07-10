@@ -1,6 +1,6 @@
 .footer-banner {
   position: relative;
-  background-image: url('/assets/theatre-seats.png');
+  // background-image: url("<%= asset_path('theatre-seats.png') %>");
   background-size: cover;
   background-position: top;
   padding-top: 150px;
