@@ -1,6 +1,6 @@
 .banner {
   position: relative;
-  background-image: url('/assets/banner-top.jpg');
+  background-image: url("<%= asset_path('banner-top.jpg') %>");
   background-size: cover;
   background-position: center;
   padding-top: 10%;
