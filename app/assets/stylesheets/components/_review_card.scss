@@ -1,3 +1,4 @@
+// REVIEW CARD ON HOME PAGE 
 .review-card {
   
   position: relative;
@@ -27,5 +28,43 @@
 
   p {
     color: $light-indigo;
+  }
+}
+
+.reviews-show {
+
+  button {
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    color: $gray;
+    font-size: 1rem;
+  }
+
+  .star {
+    color: $yellow;
+    margin-right: 0.3rem;
+  }
+
+  .star-line {
+    color: $gray;
+    margin-right: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .date-review {
+    color: #6c757d;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .p-small {
+    font-size: 0.8rem;
+    color: $light-indigo;
+    font-weight: 500;
+  }
+
+  .trash-can {
+    font-size: 1rem;
   }
 }

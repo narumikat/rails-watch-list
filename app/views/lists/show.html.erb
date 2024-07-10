@@ -13,13 +13,19 @@
       <div class="col-8 me-4">
         <h2>Bookmarks</h2>
         <% @bookmarks.each do |b| %>
-          <div class="d-flex border-bottom-b">
-            <i class="fa-solid fa-quote-left mx-2 quote"></i>
-            <div>
-              <p><%= b.comment %></p>
-              <p class="p-small d-flex"><%= b.movie.title %></p>
+          <div class="border-bottom-b d-flex justify-content-between">
+            <div class="d-flex">
+              <i class="fa-solid fa-quote-left mx-2 quote"></i>
+              <div>
+                <p><%= b.comment %></p>
+                <p class="p-small d-flex"><%= b.movie.title %></p>
+              </div>
             </div>
-            <i class="fa-solid fa-quote-right mx-2 quote"></i>
+            <div>
+              <%= button_to list_bookmark_path(@list, b), method: :delete, data: { confirm: 'Are you sure?'}, class: "" do %>
+                <i class="fa-solid fa-trash trash-can"></i>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
@@ -44,7 +50,14 @@
               <% end %>
               <p class="date-review"><%= review.created_at.strftime("%d %B %Y") %></p>
             </div>
-            <p><%= review.content %></p>
+            <div class="d-flex justify-content-between">
+              <p><%= review.content %></p>
+              <div class="d-flex align-items-start">
+                <%= button_to list_review_path(@list, review), method: :delete, data: { confirm: 'Are you sure?'}, class: "" do %>
+                  <i class="fa-solid fa-trash trash-can"></i>
+                <% end %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
