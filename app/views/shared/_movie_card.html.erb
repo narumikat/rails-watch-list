@@ -2,11 +2,11 @@
   <%= link_to movie_path(movie), class: 'movie-link' do %>
     <div class="movie-card">
       <img src="<%= movie.poster_url %>" alt="<%= movie.title %>" class="img-fluid">
-      <h4><%= movie.title %></h4>
+      <h3><%= movie.title %></h3>
       <div class="d-flex justify-content-between">
         <div class="d-flex">
           <i class="fa-solid fa-star"></i>
-          <h3 class="ms-2"><%= movie.rating %></h3>
+          <h4 class="ms-2"><%= movie.rating %></h4>
         </div>
         <p><%= movie.release_date %></p>
       </div>
