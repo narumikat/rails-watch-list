@@ -1,9 +1,10 @@
 <div class="container search-container">
   <div class="my-4">
-    <h1>Search Results for '<%= @query %>'</h1>
+    <h1>Search Results for '<strong><%= @query %></strong>'</h1>
   </div>
   <h2>Movies</h2>
-  <div class="row border-bottom-100 mb-4">
+  <div class="row mb-4">
+    <div class="border-bottom-100"></div>
     <% if @movies.any? %>
       <p>Found <strong><%= @movies.length %></strong> Movies</p>
       <% @movies.each do |movie| %>
@@ -13,8 +14,9 @@
       <p class="my-4">No movies found.</p>
     <% end %>
   </div>
-  <div class="row border-bottom-100 mb-4">
+  <div class="row mb-4">
     <h2>Lists</h2>
+    <div class="border-bottom-100"></div>
     <% if @lists.any? %>
       <p>Found <strong><%= @lists.length %></strong> Lists</p>
       <% @lists.each do |list| %>

@@ -29,6 +29,12 @@
   p {
     color: $light-indigo;
   }
+
+  @media (min-width: 440px) and (max-width: 1000px) {
+    i {
+      font-size: 3rem;
+    }
+  }
 }
 
 .reviews-show {

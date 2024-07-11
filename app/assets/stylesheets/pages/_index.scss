@@ -2,6 +2,7 @@
 @import "home";
 @import "show";
 @import "new";
+@import "search";
 
 body {
   background-color: $black;
@@ -55,12 +56,14 @@ body {
       height: 15px;
     }
   }
-
+  
   a {
     text-decoration: none;
   }
 }
 
-.search-container {
-  margin-top: 10%;
+@media (max-width: 900px) {
+  .border-bottom-100 {
+    display: none;
+  }
 }
