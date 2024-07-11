@@ -1,12 +1,22 @@
 class BookmarksController < ApplicationController
-  def create
-    if params[:list_id]
-      @list = List.find(params[:list_id])
-      @bookmark = @list.bookmarks.build(bookmark_params)
-    else
-      @bookmark = Bookmark.new(bookmark_params)
-    end
+  # def create
+  #   if params[:list_id]
+  #     @list = List.find(params[:list_id])
+  #     @bookmark = @list.bookmarks.build(bookmark_params)
+  #   else
+  #     @bookmark = Bookmark.new(bookmark_params)
+  #   end
 
+  #   if @bookmark.save
+  #     redirect_to redirect_path_after_create(@bookmark)
+  #   else
+  #     render_new_page_with_errors
+  #   end
+  # end
+  
+  def create
+    @bookmark = build_bookmark
+  
     if @bookmark.save
       redirect_to redirect_path_after_create(@bookmark)
     else
@@ -21,6 +31,15 @@ class BookmarksController < ApplicationController
   end
 
   private
+
+  def build_bookmark
+    if params[:list_id]
+      list = List.find(params[:list_id])
+      list.bookmarks.build(bookmark_params)
+    else
+      Bookmark.new(bookmark_params)
+    end
+  end
 
   def bookmark_params
     params.require(:bookmark).permit(:movie_id, :list_id, :comment)

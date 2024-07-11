@@ -2,11 +2,11 @@
   <%= link_to movie_path(bookmark.movie), class: 'movie-link' do %>
     <div class="movie-card row d-flex flex-column h-100">
       <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>" class="img-fluid">
-      <h4><%= bookmark.movie.title %></h4>
+      <h3><%= bookmark.movie.title %></h3>
       <div class="d-flex justify-content-between">
         <div class="d-flex">
           <i class="fa-solid fa-star"></i>
-          <h3 class="ms-2"><%= bookmark.movie.rating %></h3>
+          <h4 class="ms-2"><%= bookmark.movie.rating %></h4>
         </div>
         <p><%= bookmark.movie.release_date %></p>
       </div>
