@@ -57,4 +57,10 @@
       color: $indigo;
     }
   }
+
+  @media (max-width: 500px) {
+    .footer-sm {
+      margin: 0 1rem;
+    }
+  }
 }

@@ -30,4 +30,35 @@
   span {
     font-weight: 800;
   }
+
+  @media (min-width: 501px ) and (max-width: 1000px) {
+    
+      height: 60vh;
+
+      &::before {
+        background: linear-gradient(to bottom, rgba(19,19,19,0.5), rgba(19,19,19,1));
+        height: 61vh;
+      }
+    
+
+    h1 {
+      font-size: 4rem;
+      margin-top: 5%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    height: 35vh;
+    
+      &::before {
+        background: linear-gradient(to bottom, rgba(19,19,19,0.5), rgba(19,19,19,1));
+        height: 36vh;
+      }
+    
+
+    h1 {
+      font-size: 4rem;
+      margin-top: 20%;
+    }
+  }
 }

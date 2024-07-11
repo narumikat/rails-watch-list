@@ -1,5 +1,5 @@
   <%= render 'shared/banner_lists'%>
-<div class="container show-container">
+<div class="container show-container mt-4">
   <div class="row">
     <% @list.bookmarks.each do |bookmark| %>
       <%= render 'shared/movie_show_card', bookmark: bookmark %>
@@ -7,7 +7,7 @@
   </div>
   <div class="mt-5 show-container">
     <div class="row">
-      <div class="col-8 me-4">
+      <div class="col-md-8 me-4">
         <h2>Bookmarks</h2>
         <% @bookmarks.each do |b| %>
           <div class="border-bottom-b d-flex justify-content-between">
@@ -34,7 +34,7 @@
   <div class="reviews-show">
     <h2>List reviews</h2>
     <div class="row">
-      <div class="col-8">
+      <div class="col-md-8">
         <% @reviews.each do |review| %>
           <div class="row">
             <div class="d-flex">

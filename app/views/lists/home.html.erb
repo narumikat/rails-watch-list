@@ -1,14 +1,14 @@
 <%= render 'shared/banner' %>
 <div class="container container-about">
   <div class="row">
-    <div class="col-3">
+    <div class="col-12 col-md-4 col-lg-3 mt-4">
       <small>ABOUT US</small>
       <h2>All the <span>movies</span></h2>
       <p>Explore the best features our movie site has to offer. From the latest blockbusters to classic films, we've got something for everyone.</p>
     </div>
     <div class="col about-details">
       <div class="row">
-        <div class="col-6 mt-2">
+        <div class="col-md-6 col-12 mt-2">
           <div class="mb-4">
             <h3>Extensive Movie Library</h3>
             <p>Discover a vast collection of movies across all genres and time periods, carefully curated for every type of movie lover.</p>
@@ -18,7 +18,7 @@
             <p>Read reviews and ratings from fellow movie enthusiasts to help you decide what to watch next.</p>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md col-12">
           <div class="mb-4">
             <h3>Create Custom Watch Lists</h3>
             <p>Organize your movie experience by creating custom watch lists to make your viewing sessions even more enjoyable.</p>
@@ -61,7 +61,7 @@
     <h2 class="text-center">Latest <span>Reviews</span></h2>
     <div class="row">
       <% @latest_reviews.each do |review| %>
-        <div class="col-md-4 mb-4">
+        <div class=" col-md-6 col-lg-4 mb-4">
           <div class="review-card">
             <i class="fa-solid fa-quote-left"></i>
             <div class="review-card-align">

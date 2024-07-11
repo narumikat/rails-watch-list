@@ -1,40 +1,49 @@
 <div class="movie-banner" style="background-image: url('<%= @movie.backdrop_path %>')">
   <div class="container">
-    <div class="row border-bottom-100">
-      <div class="col-10">
+    <div class="row movie-show">
+      <div class="col-md-10 col-10">
         <small>MOVIE</small>
         <h1><%= @movie.title %></h1>
         <p class="release_date">Release Date: <%= @movie.release_date %></p>
       </div>
-      <div class="col d-flex align-items-center justify-content-end">
+      <div class="col-md col-2 d-flex align-items-center justify-content-end">
         <div class="row d-flex justify-content-end">
           <i class="fa-solid fa-star text-center"></i>
           <h2 class="text-center"><%= @movie.rating %></h2>
         </div>
       </div>
     </div>
+    <div class="border-bottom-100"></div>
     <div class="row">
-      <div class="col-8 overview-movie d-flex">
-        <img src="<%= @movie.poster_url %>" alt="<%= @movie.title %>" class="img-fluid">
-        <div class="mx-4">
-          <h4>Overview:</h4>
-          <p><%= @movie.overview %></p>
-          <h4>Lists:</h4>
-          <div class="container mt-4">
-            <div class="row justify-content-around">
-              <% @lists.each do |list| %>
-                <div class="col-md mb-3">
-                  <%= link_to list_path(list), class: "btn btn-transparent btn-block" do %>
-                    <%= list.name %>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
+      <div class="col-md-8 col-12 overview-movie d-flex">
+        <div class="row">
+          <div class="col col-md-4 col-lg-4 d-flex justify-content-center">
+            <img src="<%= @movie.poster_url %>" alt="<%= @movie.title %>" class="img-fluid">
+          </div>
+          <div class="m-2 col-md-12 col-lg">
+            <h4>Overview:</h4>
+            <p><%= @movie.overview %></p>
           </div>
         </div>
       </div>
       <div class="col ms-2 d-flex align-items-start">
         <%= render 'shared/bookmark_list_form'%>
+      </div>
+    </div>
+    <div class="mt-4">
+      <h4>Lists:</h4>
+      <div class="container mt-4">
+        <div class="col-12">
+          <div class="row">
+            <% @lists.each do |list| %>
+              <div class="col-3 col-md-3 col-lg-2 m-2">
+                <%= link_to list_path(list), class: "btn btn-transparent btn-block" do %>
+                  <%= list.name %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
     <div class="d-flex justify-content-start mt-4 pt-4">
